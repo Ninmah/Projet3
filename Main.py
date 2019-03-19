@@ -39,10 +39,6 @@ level= [
            ]
 
 
-while 1:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT: sys.exit()
-
     for row in range(MAPHEIGHT):
         for column in range(MAPWIDTH):
             screen.blit(textures[level[0][column]], (column*TILESIZE,row*TILESIZE))
