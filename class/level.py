@@ -13,6 +13,7 @@ class Level:
         self.finish=list()
         #self.level.append(self.ground) pr affichage 
 
+
     def load_level(self):
         with open(self.file) as my_level:
             for  x,line in enumerate(my_level):
@@ -36,4 +37,4 @@ test = Level('data/level/level1.txt')
 test.load_level()
 p = Position(0,0)
 
-print(test.is_valid_position(p))
+print(test.start)
