@@ -1,20 +1,9 @@
-from constantes import*
-class Position():
+class Position :
     
     def __init__(self,x,y):
-        self.position=(x,y)
+        self.position = x,y
 
     def __repr__(self):
-        return str(self.position)
+        
+        return repr(self.position)
 
-    def __eq__(self,pos):
-        return self.position == pos.position
-
-    def up(self):
-        x,y=self.position
-        return Position(x,y+1)
-    def down(self):
-        x,y=self.position
-        return Position(x,y-1)
-
-         
