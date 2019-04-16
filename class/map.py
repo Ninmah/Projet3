@@ -7,8 +7,7 @@ class Map:
         self.wall = list() 
         self.start = list()
         self.finish = list()
-        self.position = list()
-
+        
     def generate_map(self):
         with open(self.fichier,'r') as map:
             for x,line in enumerate(map):
@@ -23,8 +22,14 @@ class Map:
                         if column == 'F':
                             self.finish.append(Position(x,y))
                             self.ground.append(Position(x,y))
+    @property
+    def initial_position(self):
+        return list(self.start)[0]
+        
+#test map
 map = Map("/home/ben/Documents/Projet_OpenClassroom/Projet3/data/level/level1.txt")
 map.generate_map()
-print(map.ground)
-#generate map
+#print(map.start)
+
+
 

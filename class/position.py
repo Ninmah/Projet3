@@ -6,4 +6,6 @@ class Position :
     def __repr__(self):
         
         return repr(self.position)
-
+        
+    def __getitem__(self,position):
+        return self.position[position]
