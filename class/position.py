@@ -1,11 +1,31 @@
-class Position :
-    
-    def __init__(self,x,y):
-        self.position = x,y
+class Position : 
 
+    def __init__(self,x,y):
+        self.position = (x,y)
+
+    
     def __repr__(self):
         
-        return repr(self.position)
+        return str(self.position)
+
+    def __eq__(self,other):
+        return self.position == other.position
+
+    def up(self):
+        x,y = self.position
+        return Position(x,y+1)
+    
+    def down(self):
+        x,y = self.position
+        return Position(x,y-1)
+    
+    def right(self):
+        return Position(x+1,y)
         
-    def __getitem__(self,position):
-        return self.position[position]
+    def left(self):
+        return Position(x-1,y)
+
+    def get_position(self,direction):
+        x,y = self.position
+        new_position = Position(x,y) + direction
+        return new_position

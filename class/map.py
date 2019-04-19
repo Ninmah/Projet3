@@ -1,35 +1,30 @@
 from position import*
-class Map:
+class Map : 
 
-    def __init__(self,fichier):
-        self.fichier = fichier
-        self.ground = list()
-        self.wall = list() 
-        self.start = list()
-        self.finish = list()
+    def __init__(self,file):
+        self.file = file
+        self.start = []
+        self.finish = []
+        self.ground = []
+
+    def load_map(self):
         
-    def generate_map(self):
-        with open(self.fichier,'r') as map:
-            for x,line in enumerate(map):
-                    for y,column in enumerate(line):
-                        if column == 'G':
-                            self.ground.append(Position(x,y))
-                        if column == '*':
-                            self.wall.append(Position(x,y))
-                        if column == 'S':
-                            self.start.append(Position(x,y))
-                            self.ground.append(Position(x,y))
-                        if column == 'F':
-                            self.finish.append(Position(x,y))
-                            self.ground.append(Position(x,y))
-    @property
-    def initial_position(self):
-        return list(self.start)[0]
-        
-#test map
+        with open(self.file,'r') as f :
+            for x,line in enumerate(f):
+                for y, col in enumerate(line):
+                    if col == 'G': 
+                        self.ground.append(Position(x,y))
+                    if col == 'S':
+                        self.start.append(Position(x,y))
+                    if col == 'F':
+                        self.finish.append(Position(x,y))
+
+    def __contains__(self,position):
+        return position in self.ground
+
+    
+
 map = Map("/home/ben/Documents/Projet_OpenClassroom/Projet3/data/level/level1.txt")
-map.generate_map()
-#print(map.start)
-
-
-
+map.load_map()
+p = Position(-8,0)
+print(p in map)
