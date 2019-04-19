@@ -1,4 +1,5 @@
 from position import*
+import random
 class Map : 
 
     def __init__(self,file):
@@ -23,8 +24,14 @@ class Map :
         return position in self.ground
 
     
+    def start_position(self):
+        return list(self.start)[0]
+
+    def random_position_item(self):
+        return random.choice(self.ground[:])
+
+    
 
 map = Map("/home/ben/Documents/Projet_OpenClassroom/Projet3/data/level/level1.txt")
 map.load_map()
-p = Position(-8,0)
-print(p in map)
+print(map.random_position_item())

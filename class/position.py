@@ -25,7 +25,4 @@ class Position :
     def left(self):
         return Position(x-1,y)
 
-    def get_position(self,direction):
-        x,y = self.position
-        new_position = Position(x,y) + direction
-        return new_position
+
