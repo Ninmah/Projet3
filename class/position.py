@@ -9,7 +9,8 @@ class Position :
         return str(self.position)
 
     def __eq__(self,other):
-        return self.position == other.position
+        return self.position == other
+        
 
     def up(self):
         x,y = self.position
@@ -20,9 +21,11 @@ class Position :
         return Position(x,y-1)
     
     def right(self):
+        x,y = self.position
         return Position(x+1,y)
         
     def left(self):
+        x,y = self.position
         return Position(x-1,y)
 
 

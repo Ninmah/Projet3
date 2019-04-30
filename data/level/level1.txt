@@ -9,7 +9,7 @@ GGGGGGGGG******
 *G*GGG*GG*GG*G*
 *G***********G*
 *G*GGGGGG*GGGG*
-*G**GG*G**G*GG* 
-*GGGGG*G**G**** 
+*G**GG*G**G*GG*
+*GGGGG*G**G****
 *GGGGG*GGGGGGGS
 ***************
