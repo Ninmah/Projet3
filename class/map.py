@@ -33,6 +33,5 @@ class Map :
         return random.choice(self.ground[:])
 
      
-
-
-
+map = Map("/home/ben/Documents/Projet_OpenClassroom/Projet3/data/level/level1.txt")
+map.load_map()

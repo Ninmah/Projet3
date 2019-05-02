@@ -6,3 +6,4 @@ GROUND = 'G'
 WALL = '*'
 START = 'S'
 FINISH = 'F'
+

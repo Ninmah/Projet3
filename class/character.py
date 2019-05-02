@@ -12,8 +12,12 @@ class Character :
     def position_guardian(self):
         self.position = self.map.finish
 
-    def move(self, deplacement) : 
-        new_position = getattr(self.position, str(deplacement))()
+    def move(self) :
+        new_position = Position(self.position[0][0],self.position[0][1])
+        print(new_position)
         if new_position in self.map:
             self.position = new_position
+            print(self.position)
+hero1 = Character(map)
+hero1.start_hero()
 
