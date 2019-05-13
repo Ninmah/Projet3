@@ -18,7 +18,13 @@ class Game :
         self.hero = Character(self.map)
         self.hero.start_hero()
         self.guardian = Character(self.map).position_guardian()
-        self.items = Item(self.map)
+        self.items1 = Item(self.map)
+        self.items1.add_items()
+       # self.items2 = Item(self.map)
+        #self.items3 = Item(self.map)
 
     def move(self,direction):
         self.hero.move(direction)
+
+    def take_item(self):
+        return self.hero.position == self.items1.position

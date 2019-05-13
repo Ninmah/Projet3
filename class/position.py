@@ -1,10 +1,10 @@
+from curses import KEY_UP, KEY_DOWN, KEY_LEFT, KEY_RIGHT
+
 class Position : 
 
     def __init__(self,x,y):
         self.position = (x,y)
         
-
-    
     def __repr__(self):
         
         return str(self.position)
@@ -16,20 +16,24 @@ class Position :
         return self.position[i]
         
 
-    def up(self):
-        x,y = self.position
-        return Position(x,y+1)
-    
-    def down(self):
-        x,y = self.position
-        return Position(x,y-1)
-    
-    def right(self):
-        x,y = self.position
-        return Position(x+1,y)
-        
-    def left(self):
-        x,y = self.position
-        return Position(x-1,y)
+
+
+    def deplacement(self,direction):
+
+        if direction == KEY_UP:
+            x,y = self.position
+            return Position(x-1,y)
+
+        elif direction == KEY_DOWN : 
+            x,y = self.position
+            return Position(x+1,y)
+
+        elif direction == KEY_RIGHT :
+            x,y = self.position
+            return Position(x,y+1)
+
+        elif direction == KEY_LEFT: 
+            x,y = self.position
+            return Position(x,y-1)
 
 

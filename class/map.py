@@ -4,9 +4,10 @@ class Map :
 
     def __init__(self,file) :
         self.file = file
-        self.start = []
+        self.start = None
         self.finish = []
         self.ground = []
+        self.items = []
         self.width = 15
         self.height = 15
 
@@ -20,17 +21,18 @@ class Map :
                     if col == 'G': 
                         self.ground.append(Position(x,y))
                     if col == 'S':
-                        self.start.append(Position(x,y))
+                        self.start = Position(x,y)
+                        self.ground.append(Position(x,y))
                     if col == 'F':
                         self.finish.append(Position(x,y))
-
+                        self.ground.append(Position(x,y))
 
     def __contains__(self,position):
         return position in self.ground
 
    
     def random_position_item(self):
-        return random.choice(self.ground[:])
+        return random.choice(self.ground)
 
      
 map = Map("/home/ben/Documents/Projet_OpenClassroom/Projet3/data/level/level1.txt")
