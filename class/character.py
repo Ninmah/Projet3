@@ -1,5 +1,4 @@
 from map import*
-from items import *
 from curses import KEY_UP, KEY_DOWN, KEY_LEFT, KEY_RIGHT
 
 class Character :
@@ -17,11 +16,9 @@ class Character :
 
     def move(self,direction) :
         new_position = Position(self.position[0],self.position[1]).deplacement(direction)
-        if new_position in self.map:
+        if new_position in self.map.ground:
             self.position = new_position
     
-    def exit(self):
-        return self.position in self.map.finish 
 
 
 hero1 = Character(map)

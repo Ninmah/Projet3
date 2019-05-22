@@ -1,10 +1,19 @@
 from map import*
+from game import*
 import random
 class Item :
 
-    def __init__(self,level):
+    def __init__(self,level,name):
         self.level = level
         self.position = self.level.random_position_item()
+        self.name = name
+        self.item_counter = 1
 
-    def add_items(self):
-        self.level.items.append(self.position)
+ 
+
+        
+
+    def __repr__(self):
+    
+        return str(self.name)
+

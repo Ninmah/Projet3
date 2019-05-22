@@ -1,4 +1,5 @@
-from curses import KEY_UP, KEY_DOWN, KEY_LEFT, KEY_RIGHT
+from pygame import K_RIGHT, K_LEFT,K_DOWN,K_UP
+from constantes import *
 
 class Position : 
 
@@ -20,20 +21,20 @@ class Position :
 
     def deplacement(self,direction):
 
-        if direction == KEY_UP:
+        if direction == K_UP:
             x,y = self.position
-            return Position(x-1,y)
+            return Position(x,y-1)
 
-        elif direction == KEY_DOWN : 
-            x,y = self.position
-            return Position(x+1,y)
-
-        elif direction == KEY_RIGHT :
+        elif direction == K_DOWN : 
             x,y = self.position
             return Position(x,y+1)
 
-        elif direction == KEY_LEFT: 
+        elif direction == K_RIGHT :
             x,y = self.position
-            return Position(x,y-1)
+            return Position(x+1,y)
+
+        elif direction == K_LEFT: 
+            x,y = self.position
+            return Position(x-1,y)
 
 
