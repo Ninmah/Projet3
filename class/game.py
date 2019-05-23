@@ -13,6 +13,7 @@ class Game :
         self.ether = None
         self.tube = None
         self.win_counter = 0
+
     def start(self):
 
         self.map = Map("/home/ben/Documents/Projet_OpenClassroom/Projet3/data/level/level1.txt")
