@@ -9,6 +9,10 @@ def main():
     pygame.init()
     screen = pygame.display.set_mode((675,675),RESIZABLE)
     pygame.display.set_caption("Labyrinthe MacGyver")
+    font = pygame.font.SysFont("Arial", 72)
+    win_text = font.render("You win", True, (51, 100, 255))
+    loose_text = font.render("You loose", True, (51, 100, 255))
+
 
     continuer = True
     #chargement sprite
@@ -19,6 +23,7 @@ def main():
     tube = pygame.image.load(tube_sprite).convert_alpha()
     ether = pygame.image.load(ether_sprite).convert_alpha()
     guardian = pygame.image.load(guardian_sprite).convert_alpha()
+
     while continuer:
 
         pygame.time.Clock().tick(30)
@@ -39,27 +44,10 @@ def main():
                     game.hero.move(K_LEFT)
                     game.take_item()
                     
-        for x in range(game.map.width):
-            for y in range(game.map.width):
-                if (x,y) in game.map.ground:
-                    screen.blit(ground,(x*TILESIZE,y*TILESIZE))
-                elif(x,y) in game.map.wall:
-                    screen.blit(wall,(x*TILESIZE,y*TILESIZE))
 
-        screen.blit(hero,(game.hero.position[0]*TILESIZE,game.hero.position[1]*TILESIZE))
-        screen.blit(guardian,(game.guardian.position[0]*TILESIZE,game.guardian.position[1]*TILESIZE)) 
-        print(game.win_counter)
-        
-        if game.needle.item_counter == 1 : 
-            screen.blit(needle,(game.needle.position[0]*TILESIZE,game.needle.position[1]*TILESIZE))
-        if game.tube.item_counter == 1:
-            screen.blit(tube,(game.tube.position[0]*TILESIZE,game.tube.position[1]*TILESIZE))
-        if game.ether.item_counter == 1:
-            screen.blit(ether,(game.ether.position[0]*TILESIZE,game.ether.position[1]*TILESIZE))
-        
+            
 
         pygame.display.flip()
-        game.exit()
 
 
 game = Game()

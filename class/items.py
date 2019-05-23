@@ -8,7 +8,6 @@ class Item :
         self.position = self.level.random_position_item()
         self.name = name
         self.item_counter = 1
-
  
 
         

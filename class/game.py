@@ -46,8 +46,8 @@ class Game :
             self.ether.item_counter = 0
             
     
-    def exit(self):
-        if self.hero.position == self.guardian.position and self.win_counter == 3:
-            print("tu as gg")
-        elif self.hero.position == self.guardian.position and self.win_counter != 3:
-            print("tu as loose")
+    def win_condition(self):
+        return self.hero.position == self.guardian.position and self.win_counter == 3
+    
+    def loose_condition(self):
+        return self.hero.position == self.guardian.position and self.win_counter != 3

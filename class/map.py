@@ -9,6 +9,7 @@ class Map :
         self.ground = []
         self.valid_position = []
         self.wall = []
+        self.item = []
         self.width = 15
         self.height = 15
 
@@ -37,6 +38,7 @@ class Map :
    
     def random_position_item(self):
         return random.choice(self.valid_position)
+         
 
      
 map = Map("/home/ben/Documents/Projet_OpenClassroom/Projet3/data/level/level1.txt")
